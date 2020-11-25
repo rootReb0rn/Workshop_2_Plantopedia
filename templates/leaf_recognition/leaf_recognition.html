@@ -1,0 +1,211 @@
+
+<!-- Default Setting -->
+{% extends 'base.html' %}
+
+<!-- Head Conponents -->
+{% block head %}
+   
+    <title>Leaf Recognition</title>
+    <link rel="stylesheet" href="{{ url_for('static' , filename='css/leaf_recognition.css') }}">
+
+{% endblock %}
+
+<!-- Head Conponents -->
+{% block body %}
+<div class="container-fluid bg-custom-image m-0 p-0 shadow">
+    <nav class="navbar navbar-light">
+      <a class="navbar-brand text-dark" href="/">Plantopedia</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01"
+        aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse text-dark" id="navbarsExample01">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Leaf Recognition<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Plant Disease Advice</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Plant Information</a>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <div class="container-fluid" style="height: 60vh;">
+      <div class="col-md-6 pt-5">
+        <h1 class="pt-5"><b>Leaf</b> Recognition</h1>
+        <p>Recognize your plant by using leaf in our system</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container bg-white custom-container shadow p-0" style="height: 50vh;">
+    <div class="card text-center border-0 rounded h-100">
+      <div class="card-header bg-dark">
+        <ul class="nav nav-tabs card-header-tabs" id="nav-tab" role="tablist">
+        {% if "Upload" in currentPage %}
+          <li class="nav-item">
+            <a class="nav-link test active" id="nav-upload-tab" data-toggle="tab" href="#nav-upload" role="tab" aria-controls="nav-upload" aria-selected="true">Upload</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link test disabled" id="nav-result-tab" data-toggle="tab" href="#nav-result" role="tab" aria-controls="nav-result" aria-selected="false">Result</a>
+          </li>
+        {% else %}
+          <li class="nav-item">
+            <a class="nav-link test" id="nav-upload-tab" data-toggle="tab" href="#nav-upload" role="tab" aria-controls="nav-upload" aria-selected="true">Upload</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link test active" id="nav-result-tab" data-toggle="tab" href="#nav-result" role="tab" aria-controls="nav-result" aria-selected="false">Result</a>
+          </li>
+        {% endif %}
+        </ul>
+      </div>
+  
+      
+      <div class="tab-content" id="nav-tabContent">
+        {% if "Upload" in currentPage %}
+        <div class="tab-pane fade show active" id="nav-upload" role="tabpanel" aria-labelledby="nav-upload-tab">
+          <div class="card-body">
+            <form action="/leaf_recognition/upload" method="POST" enctype="multipart/form-data">  
+              <div class="form-group row mx-5 pt-2">
+                <h1 class="text-left">Upload Your Image</h1>
+              </div>
+              <div class="form-group row mx-5">
+                
+              <div class="custom-file text-left ">
+                <input type="file" class="custom-file-input" id="image" name="image">
+                <label class="custom-file-label" for="image">Select your plant leaf image</label>
+              </div>
+              </div>
+              <div class="form-group row mx-5">
+                <button type="submit" class="btn btn-primary btn-block mt-3">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="nav-result" role="tabpanel" aria-labelledby="nav-result-tab">
+          <!--
+          <div class="card-body text-left">
+            <div class="row">
+              <div class="col-md-4">
+                  <h4>Your Image</h4>
+                  <div class="container-fluid bg-dark" style="height: 30vh;">
+                    <h1 class="text-white">Hello</h1>
+                  </div>
+              </div>
+              <div class="col-md-8">
+                
+                <div class="row">
+                  <div class="col-md-10">
+                    <h1>Plant Name</h1>
+                  </div>
+                  <div class="col-md-2 text-center">
+                    <h1>T</h1>
+                  </div>
+                </div>
+                <p class="text-justify" style="height: 15vh;width: 100%;overflow: auto;"  id="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti alias labore error animi consectetur illum unde debitis voluptas perspiciatis exercitationem nesciunt qui, hic eum, dignissimos expedita laudantium commodi quibusdam sunt? Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum dolorum veritatis reiciendis quibusdam ea, accusantium velit alias porro eos nam non minus neque sapiente expedita eligendi atque rem modi tempore. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores consequatur quam doloribus sunt quis sequi, numquam consequuntur fugiat harum repellendus quasi natus, optio excepturi ratione minima! Quae blanditiis incidunt architecto!</p>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                  <button type="button" class="btn btn-warning">Plant Disease Advice</button>
+                  <button type="button" class="btn btn-primary">Plant Information</button>
+                  <a href="#" id="speak" class="btn">Speak</a>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          -->
+        </div>
+        {% else %}
+        <div class="tab-pane fade" id="nav-upload" role="tabpanel" aria-labelledby="nav-upload-tab">
+            <div class="card-body">
+              <form action="/leaf_recognition/upload" method="POST" enctype="multipart/form-data">  
+                <div class="form-group row mx-5 pt-2">
+                  <h1 class="text-left">Upload Your Image</h1>
+                </div>
+                <div class="form-group row mx-5">
+                  
+                <div class="custom-file text-left ">
+                  <input type="file" class="custom-file-input" id="image" name="image">
+                  <label class="custom-file-label" for="image">Select your plant leaf image</label>
+                </div>
+                </div>
+                <div class="form-group row mx-5">
+                  <button type="submit" class="btn btn-primary btn-block mt-3">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="tab-pane fade show active" id="nav-result" role="tabpanel" aria-labelledby="nav-result-tab">
+            <div class="card-body text-left">
+              <div class="row">
+                <div class="col-md-4">
+                  <h4 class="text-center">Your Image</h4>
+                  <div class="container-fluid p-0" style="height: 30vh;">
+                    <img class="rounded mx-auto d-block" style="height:100%;width:auto;" src="{{ url_for('static' , filename='img/uploads/' + imgFileName) }}">
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  
+                  <div class="row">
+                    <div class="col-md-10">
+                      <h1>{{class_label}}</h1>
+                    </div>
+                    <div class="col-md-2 text-center">
+                      <span id="speak" ><svg xmlns="http://www.w3.org/2000/svg" height="40" viewBox="0 0 24 24" width="40" style="cursor: pointer; "><path d="M0 0h24v24H0z" fill="none"/><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span>
+                    </div>
+                  </div>
+                  <p class="text-justify" style="height: 15vh;width: 100%;overflow: auto;"  id="message">
+                    {% if class_label %}
+                    {% if class_label == "Tomato" %}
+                        Tomatoes are the richest source of lycopene which is important for the health of the prostate gland in men. They were first brought to Europe in the mid 1500's. The first tomatoes in Europe were yellow varieties, the Italian for tomato is pomodoro and translates to golden apple. A tomato is a fruit.
+                    {% endif %}
+                    {% if class_label == "Potato" %}
+                        The potato is the most important non-cereal crop in the world, and fourth most important crop overall. Only corn, wheat, and rice are more important. In the US, potato products are the second most consumed food overall, trailing only dairy products. Potatoes are 80% water.
+                    {% endif %}
+                    {% if class_label == "Bell Pepper" %}
+                        Red, Orange, and Yellow Bell Peppers are full of great health benefits—they're packed with vitamins and low in calories! They are an excellent source of vitamin A, vitamin C, and potassium. Bell Peppers also contain a healthy dose of fiber, folate, and iron.
+                    {% endif %}
+                    {% endif %}
+                  
+                  </p>
+                  <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-warning">Plant Disease Advice</button>
+                    <button type="button" class="btn btn-primary">Plant Information</button>
+  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block local_js %} 
+
+<script>
+    $('#image').on('change',function(){
+        //get the file name
+        var fileName = $(this).val().replace('C:\\fakepath\\', " ");
+        //replace the "Choose a file" label
+        $(this).next('.custom-file-label').html(fileName);
+    })
+  </script>
+  
+  <script>
+    $('#speak').click(function(){
+      var text = $('#message').text();
+      
+      console.log(text);
+      var msg = new SpeechSynthesisUtterance(text);
+      window.speechSynthesis.speak(msg);
+    })
+    
+  </script>
+{% endblock %}

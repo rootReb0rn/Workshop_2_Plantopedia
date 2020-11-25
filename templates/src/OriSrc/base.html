@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <title>Leaf Identification Intelligent System</title>
+    </head>
+    <body>
+        <main role="main">
+            <div class="row">
+                <div class="jumbotron col-lg-12" style="background-color: #3bc08f;">
+                    <div class="container">
+                        <h1 class="display-4">Leaf Identification System</h1>
+                        <p>You can start by uploading a leaf picture for our AI model to identify.</p>
+                        <form action="/image-upload" method="POST" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label>Select image</label>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" name="image" id="image">
+                                    <label class="custom-file-label" for="image">Select image...</label>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Upload</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="height:60%;margin-top: -30px;">
+                <div class="col-lg-6" style="background-color: 
+                #4fb286;">
+                    <!--UPLOADED IMAGE GOES HERE-->
+                    {% if imgFileName %}
+                        <img class="rounded mx-auto d-block" style="border-radius:30px;border:1px solid black;height:300px;width:auto;margin:0 auto;" src="{{'uploads/'+imgFileName}}">
+                    {% endif %}
+                </div>
+                <div class="col-lg-6" style="background-color: #3c896d;">
+                    <div class="container text-center">
+                        {% if class_label %}
+                            <h2 style="color:white;text-align: center;">That is a <strong>{{class_label}}</strong> leaf.</h2>
+                            {% if class_label == "Tomato" %}
+                                <h3 style="color:white">Tomatoes are the richest source of lycopene which is important for the health of the prostate gland in men. They were first brought to Europe in the mid 1500's. The first tomatoes in Europe were yellow varieties, the Italian for tomato is pomodoro and translates to golden apple. A tomato is a fruit.</h3>
+                            {% endif %}
+                            {% if class_label == "Potato" %}
+                                <h3 style="color:white">The potato is the most important non-cereal crop in the world, and fourth most important crop overall. Only corn, wheat, and rice are more important. In the US, potato products are the second most consumed food overall, trailing only dairy products. Potatoes are 80% water.</h3>
+                            {% endif %}
+                            {% if class_label == "Bell Pepper" %}
+                                <h3 style="color:white">Red, Orange, and Yellow Bell Peppers are full of great health benefits—they're packed with vitamins and low in calories! They are an excellent source of vitamin A, vitamin C, and potassium. Bell Peppers also contain a healthy dose of fiber, folate, and iron.</h3>
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    </body>
+</html>

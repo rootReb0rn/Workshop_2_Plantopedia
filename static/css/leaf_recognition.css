@@ -1,0 +1,32 @@
+
+body{
+
+  overflow: hidden;
+}
+
+
+.bg-custom-image {
+
+  background-image: url(../asset/image/unwanted/plant-2004483_1920.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  
+}
+
+.custom-container {
+
+  position: relative;
+  bottom: 150px;
+}
+
+.test,
+.test:hover {
+  color: white;
+  border: none;
+}
+
+.test:hover {
+
+  background-color: rgba(255, 235, 205, 0.253);
+}
