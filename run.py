@@ -5,11 +5,10 @@ import cv2
 import tensorflow as tf
 
 
-# physical_devices = tf.config.list_physical_devices('CPU')
-# tf.config.experimental.set_memory_growth(physical_devices[0], True)
+physical_devices = tf.config.list_physical_devices('GPU')
+tf.config.experimental.set_memory_growth(physical_devices[0], True)
 
 
-# app = Flask(__name__, static_folder='uploads')
 app = Flask(__name__)
 
 
@@ -22,10 +21,10 @@ app.config['IMAGE_UPLOADS'] = uploadDir
 
 # P R E P A R E  U S E R   D A T A
 def prepare(filepath):
-    IMG_SIZE = 100
+    IMG_SIZE = 200
     img_array = cv2.imread(filepath)
     new_array = cv2.resize(img_array, (IMG_SIZE, IMG_SIZE))
-    return new_array.reshape(-1, IMG_SIZE, 3)
+    return new_array.reshape(-1, IMG_SIZE,IMG_SIZE, 3)
 
 
 # I M P O R T    M O D E L
@@ -34,7 +33,7 @@ model = tf.keras.models.load_model("model")
 
 # P R E D I C T I O N
 def returnPrediction(prediction):
-    CATEGORIES = ["Bell Pepper", "Potato", "Tomato"]
+    CATEGORIES = ["Lemon", "Mango", "Noni"]
     counter = 0
     for pred in prediction:
         counter = 0
