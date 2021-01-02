@@ -1,0 +1,344 @@
+
+<!-- Default Setting -->
+{% extends 'base02.html' %}
+
+<!-- Head Conponents -->
+{% block head %}
+    <title>Plant Information</title>
+    <link rel="stylesheet" href="{{ url_for('static' , filename='css/plant_disease_advice.css') }}">
+
+    <style>
+
+        .select-plant{
+
+            color: #38603D;
+            font-weight: bold;
+        }
+
+
+        .select-plant:hover{
+            
+
+            transition: 1s;
+            color: #38603D;
+            background-color: rgba(144, 238, 144, 0.198);
+        }
+
+        .nav-pills .nav-link.active{
+
+            background-color: #38603D;
+        }
+    </style>
+
+{% endblock %}
+<!-- Head Conponents -->
+
+
+{% block body %}
+<div class="container-fluid bg-custom-image m-0 p-0 shadow">
+  <nav class="navbar navbar-light">
+    <a class="navbar-brand text-white" href="/">Plantopedia</a>
+    <button class="navbar-toggler bg-white" type="button" data-toggle="collapse" data-target="#navbarsExample01"
+      aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon bg-white"></span>
+    </button>
+    <div class="collapse navbar-collapse text-white" id="navbarsExample01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item pl-2">
+          <a class="nav-link text-white" href="/leaf_recognition">Leaf Recognition<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active pl-2" style="background-color: white; color: #38603D; border-radius: 5px;">
+          <a class="nav-link active" href="/plant_disease_advice">Plant Disease Advice</a>
+        </li>
+        <li class="nav-item pl-2">
+          <a class="nav-link text-white" href="/plant_information">Plant Information</a>
+        </li>
+      </ul>
+
+    </div>
+  </nav>
+
+  <div class="container-fluid" style="height: 40vh;">
+    <div class="col-md-6 pt-5 ">
+      <h1 class="pt-3 text-white"><b>Plant</b> Disease Advice</h1>
+      
+    </div>
+  </div>
+</div>
+
+<div class="container custom-container shadow-lg rounded bg-white border-top-0">
+  <h2 class="text-center py-3">Plants & Diseases Available</h2>
+  <div class="container rounded shadow-lg p-3" style="background-color: #FDF8F5;">
+    <ul class="nav nav-pills nav-justified" id="nav-tab" role="tablist">
+        <li class="nav-item px-2">
+          <a class="nav-link select-plant active" id="nav-home-tab" data-toggle="tab" href="#pills-home" role="tab" aria-controls="nav-home" aria-selected="true">Lemon</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link select-plant" id="nav-profile-tab" data-toggle="tab" href="#pills-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Mango</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link select-plant" id="nav-contact-tab" data-toggle="tab" href="#pills-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Noni</a>
+        </li>
+      </ul>
+  </div>
+
+  <div class="container pt-5 pb-3">
+    <div class="tab-content" id="pills-tabContent">
+        <!-- Lemon -->
+        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+            <h2>Citrus Canker</h2>
+            <hr>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/lemon/Citrus Canker/1.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/lemon/Citrus Canker/2.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/lemon/Citrus Canker/3.jpeg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/lemon/Citrus Canker/4.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="pt-5">Citrus Leaf Miner</h2>
+            <hr>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/lemon/Citrus Leaf Miner/1.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/lemon/Citrus Leaf Miner/2.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/lemon/Citrus Leaf Miner/3.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/lemon/Citrus Leaf Miner/4.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="pt-5">Lemon Anthracnose</h2>
+            <hr>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/lemon/Lemon Anthracnose/1.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/lemon/Lemon Anthracnose/2.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/lemon/Lemon Anthracnose/3.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/lemon/Lemon Anthracnose/4.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="pt-5">Lemon Huanglongbing</h2>
+            <hr>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/lemon/Lemon HLB/1.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/lemon/Lemon HLB/2.png') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/lemon/Lemon HLB/3.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/lemon/Lemon HLB/4.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                </div>
+            </div>
+
+
+            <a href="/plant_disease_advice/lemon" class="btn btn-lg btn-block bg-warning my-5">Diagonsis your plant now</a>
+        </div> <!-- Lemon -->
+
+        <!-- Mango -->
+        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+            <h2>Algal Leaf Spot</h2>
+            <hr>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/mango/Algal Leaf Spot/1.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/mango/Algal Leaf Spot/2.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/mango/Algal Leaf Spot/3.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/mango/Algal Leaf Spot/4.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="pt-5">Phoma Blight</h2>
+            <hr>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/mango/Phoma Blight/1.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/mango/Phoma Blight/2.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/mango/Phoma Blight/3.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/mango/Phoma Blight/4.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="pt-5">Powdery Mildew</h2>
+            <hr>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/mango/Powdery Mildew/1.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/mango/Powdery Mildew/2.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/mango/Powdery Mildew/3.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/mango/Powdery Mildew/4.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="pt-5">Sooty Mold</h2>
+            <hr>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/mango/Sooty Mold/1.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/mango/Sooty Mold/2.png') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/mango/Sooty Mold/3.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/mango/Sooty Mold/4.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                </div>
+            </div>
+
+
+            <a href="/plant_disease_advice/mango" class="btn btn-lg btn-block bg-warning my-5">Diagonsis your plant now</a>
+        
+        </div> <!-- Mango -->
+        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+            <h2>Algal Leaf Spot</h2>
+            <hr>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/noni/Algal Leaf Spot/1.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/noni/Algal Leaf Spot/2.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/noni/Algal Leaf Spot/3.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/noni/Algal Leaf Spot/4.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="pt-5">Heliothrips Haemorrhoidalis</h2>
+            <hr>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/noni/Heliothrips Haemorrhoidalis/1.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/noni/Heliothrips Haemorrhoidalis/2.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/noni/Heliothrips Haemorrhoidalis/3.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/noni/Heliothrips Haemorrhoidalis/4.png') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="pt-5">Noni Anthracnose</h2>
+            <hr>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/noni/Noni Anthracnose/1.png') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/noni/Noni Anthracnose/2.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/noni/Noni Anthracnose/3.png') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/noni/Noni Anthracnose/4.png') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="pt-5">Noni Black Flag</h2>
+            <hr>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/noni/Noni Black Flag/1.png') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/noni/Noni Black Flag/2.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/noni/Noni Black Flag/3.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                    <div class="col-3" style="height: 30vh">
+                        <img src="{{ url_for('static' , filename='asset/image/PlantDiseaseAdvice/noni/Noni Black Flag/4.jpg') }}"  class="h-100 w-100 rounded" alt="">
+                    </div>
+                </div>
+            </div>
+
+
+            <a href="/plant_disease_advice/noni" class="btn btn-lg btn-block bg-warning my-5">Diagonsis your plant now</a>
+       
+
+        </div>
+      </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+{% endblock %}
+

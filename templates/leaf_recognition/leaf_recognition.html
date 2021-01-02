@@ -1,13 +1,19 @@
 
 <!-- Default Setting -->
-{% extends 'base.html' %}
+{% extends 'base01.html' %}
 
 <!-- Head Conponents -->
 {% block head %}
    
     <title>Leaf Recognition</title>
     <link rel="stylesheet" href="{{ url_for('static' , filename='css/leaf_recognition.css') }}">
-
+    <style>
+      .show-active{
+        background-color: #38603D;
+        color: white;
+        border-radius: 5px;
+      }
+    </style>
 {% endblock %}
 
 <!-- Head Conponents -->
@@ -21,14 +27,14 @@
       </button>
       <div class="collapse navbar-collapse text-dark" id="navbarsExample01">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Leaf Recognition<span class="sr-only">(current)</span></a>
+          <li class="nav-item show-active pl-2">
+            <a class="nav-link text-white" href="/leaf_recognition">Leaf Recognition<span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Plant Disease Advice</a>
+          <li class="nav-item pl-2">
+            <a class="nav-link" href="/plant_disease_advice">Plant Disease Advice</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Plant Information</a>
+          <li class="nav-item pl-2">
+            <a class="nav-link" href="/plant_information">Plant Information</a>
           </li>
         </ul>
 
@@ -158,25 +164,33 @@
                       <span id="speak" ><svg xmlns="http://www.w3.org/2000/svg" height="40" viewBox="0 0 24 24" width="40" style="cursor: pointer; "><path d="M0 0h24v24H0z" fill="none"/><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span>
                     </div>
                   </div>
-                  <p class="text-justify" style="height: 15vh;width: 100%;overflow: auto;"  id="message">
                     {% if class_label %}
                     {% if class_label == "Lemon" %}
-                        Tomatoes are the richest source of lycopene which is important for the health of the prostate gland in men. They were first brought to Europe in the mid 1500's. The first tomatoes in Europe were yellow varieties, the Italian for tomato is pomodoro and translates to golden apple. A tomato is a fruit.
+                    <p class="text-justify" style="height: 15vh;width: 100%;overflow: auto;"  id="message">Lemon, (Citrus ×limon), small tree or spreading bush of the rue family (Rutaceae) and its edible fruit. Lemon juice is a characteristic ingredient in many pastries and desserts, such as tarts and the traditional American lemon meringue pie. The distinctive astringent flavour of the fruit, either fresh or preserved, is also used to enhance many poultry, fish, and vegetable dishes worldwide. Lemonade, made with lemon, sugar, and water, is a popular warm-weather beverage, and the juice itself is commonly added to tea. Citric acid may amount to 5 percent or more by weight of the lemon’s juice, which is also rich in vitamin C and contains smaller amounts of the B vitamins, particularly thiamin, riboflavin, and niacin.</p>                    
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                      <a href="/plant_disease_advice/lemon" class="btn btn-warning">Plant Disease Advice</a>
+                      <a href="/plant_information/lemon" class="btn btn-primary">Plant Information</a>
+                    </div>
                     {% endif %}
                     {% if class_label == "Mango" %}
-                        The potato is the most important non-cereal crop in the world, and fourth most important crop overall. Only corn, wheat, and rice are more important. In the US, potato products are the second most consumed food overall, trailing only dairy products. Potatoes are 80% water.
+                    <p class="text-justify" style="height: 15vh;width: 100%;overflow: auto;"  id="message">(Mango) Mangifera indica, commonly known as mango, is a species of flowering plant in the sumac and poison ivy family Anacardiaceae. It is native to the Indian subcontinent where it is indigenous. Hundreds of cultivated varieties have been introduced to other warm regions of the world. It is a large fruit-tree, capable of growing to a height and crown width of about 30 metres (100 ft) and trunk circumference of more than 3.7 metres</p>                    
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                      <a href="/plant_disease_advice/mango" class="btn btn-warning">Plant Disease Advice</a>
+                      <a href="/plant_information/mango" class="btn btn-primary">Plant Information</a>
+                    </div>
                     {% endif %}
                     {% if class_label == "Noni" %}
-                        Red, Orange, and Yellow Bell Peppers are full of great health benefits—they're packed with vitamins and low in calories! They are an excellent source of vitamin A, vitamin C, and potassium. Bell Peppers also contain a healthy dose of fiber, folate, and iron.
+                    <p class="text-justify" style="height: 15vh;width: 100%;overflow: auto;"  id="message">(Noni) Morinda citrifolia is a fruit-bearing tree in the coffee family, Rubiaceae. Its native range extends across Southeast Asia and Australasia, and was spread across the Pacific by Polynesian sailors. The species is now cultivated throughout the tropics and widely naturalized. Among some 100 names for the fruit across different regions are the more common English names of great morinda, Indian mulberry, noni, beach mulberry, and cheese fruit.</p>                    
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                      <a href="/plant_disease_advice/noni" class="btn btn-warning">Plant Disease Advice</a>
+                      <a href="/plant_information/noni" class="btn btn-primary">Plant Information</a>
+                    </div>
                     {% endif %}
                     {% endif %}
                   
-                  </p>
-                  <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-warning">Plant Disease Advice</button>
-                    <button type="button" class="btn btn-primary">Plant Information</button>
-  
-                  </div>
+                
+
+                  
                 </div>
               </div>
             </div>

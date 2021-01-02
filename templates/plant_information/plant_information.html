@@ -1,0 +1,87 @@
+
+<!-- Default Setting -->
+{% extends 'base01.html' %}
+
+<!-- Head Conponents -->
+{% block head %}
+    <title>Plant Information</title>
+    <link rel="stylesheet" href="{{ url_for('static' , filename='css/plant_information.css') }}">
+
+{% endblock %}
+<!-- Head Conponents -->
+
+
+{% block body %}
+<div class="container-fluid bg-custom-image m-0 p-0 shadow">
+  <nav class="navbar navbar-light">
+    <a class="navbar-brand text-white" href="/">Plantopedia</a>
+    <button class="navbar-toggler bg-white" type="button" data-toggle="collapse" data-target="#navbarsExample01"
+      aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon bg-white"></span>
+    </button>
+    <div class="collapse navbar-collapse text-white" id="navbarsExample01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item pl-2">
+          <a class="nav-link text-white" href="/leaf_recognition">Leaf Recognition<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item pl-2" >
+          <a class="nav-link text-white" href="/plant_disease_advice">Plant Disease Advice</a>
+        </li>
+        <li class="nav-item active pl-2" style="background-color: white; color: #38603D; border-radius: 5px;">
+          <a class="nav-link active" href="/plant_information">Plant Information</a>
+        </li>
+      </ul>
+
+
+    </div>
+  </nav>
+
+  <div class="container-fluid" style="height: 40vh;">
+    <div class="col-md-6 pt-5 ">
+      <h1 class="pt-3 text-white"><b>Plant</b> Information</h1>
+      
+    </div>
+  </div>
+</div>
+
+<div class="container custom-container shadow-lg rounded bg-white border-top-0">
+  <h1 class="pt-4">Our Plants</h1>
+  <div class="row pt-2 mb-4">
+      <div class="col-lg-4 mb-3 mb-lg-0">
+          <div class="hover hover-3 text-white rounded"><img src="{{ url_for('static' , filename='asset/image/PlantInformation/lemon.jpg') }}" alt="">
+            <div class="hover-overlay"></div>
+            <div class="hover-3-content px-5 py-4">
+              <h3 class="hover-3-title text-uppercase font-weight-bold mb-1"><span class="font-weight-light"></span>Lemon</h3>
+              <a class="hover-3-description btn btn-outline-light" href="/plant_information/lemon" role="button">Learn more</a>
+          </div>
+          </div>
+        </div>
+      <div class="col-lg-4 mb-3 mb-lg-0">
+          <div class="hover hover-3 text-white rounded"><img src="{{ url_for('static' , filename='asset/image/PlantInformation/mango.jpg') }}" alt="">
+            <div class="hover-overlay"></div>
+            <div class="hover-3-content px-5 py-4">
+              <h3 class="hover-3-title text-uppercase font-weight-bold mb-1"><span class="font-weight-light"></span>Mango</h3>
+              <a class="hover-3-description btn btn-outline-light" href="/plant_information/mango" role="button">Learn more</a>
+            </div>
+          </div>
+        </div>
+      <div class="col-lg-4 mb-3 mb-lg-0">
+          <div class="hover hover-3 text-white rounded"><img src="{{ url_for('static' , filename='asset/image/PlantInformation/noni.jpg') }}" alt="">
+            <div class="hover-overlay"></div>
+            <div class="hover-3-content px-5 py-4">
+              <h3 class="hover-3-title text-uppercase font-weight-bold mb-1"><span class="font-weight-light"></span>Noni</h3>
+              <a class="hover-3-description btn btn-outline-light" href="/plant_information/noni" role="button">Learn more</a>
+            </div>
+          </div>
+        </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+{% endblock %}
+

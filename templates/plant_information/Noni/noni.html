@@ -1,0 +1,125 @@
+
+<!-- Default Setting -->
+{% extends 'base02.html' %}
+
+<!-- Head Conponents -->
+{% block head %}
+    <title>Noni Plant [Information]</title>
+    <link rel="stylesheet" href="{{ url_for('static' , filename='css/lemon.css') }}">
+
+  <style>
+    .bg-custom-image {
+
+      background-image: url("{{ url_for('static' , filename='asset/image/Noni/noni.jpg') }}");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-position-y: 70%;
+      background-position-x: 100%;
+
+      }
+
+  </style>
+
+{% endblock %}
+<!-- Head Conponents -->
+
+
+{% block body %}
+<div class="container-fluid bg-custom-image m-0 p-0 shadow-lg">
+    <nav class="navbar navbar-light">
+      <a class="navbar-brand text-white" href="/">Plantopedia</a>
+      <button class="navbar-toggler bg-white" type="button" data-toggle="collapse" data-target="#navbarsExample01"
+        aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon bg-white"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarsExample01">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item pl-2">
+            <a class="nav-link text-white" href="/leaf_recognition">Leaf Recognition<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item pl-2" >
+            <a class="nav-link text-white" href="/plant_disease_advice">Plant Disease Advice</a>
+          </li>
+          <li class="nav-item active pl-2" style="background-color: white; color: #38603D; border-radius: 5px;">
+            <a class="nav-link active" href="/plant_information">Plant Information</a>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <div class="container-fluid" style="height: 70vh;">
+        <div class="row" style="height: 80%;">
+            <div class="col-md-6 pl-5 py-5" >
+                <h1 class="pt-3 text-white pt-5" style="font-size: 64px;"><b>Noni</b> Plant</h1>
+                <h3 class="text-white">Information</h3>
+            </div>
+        </div>
+        <div class="row" style="height: 20%;">
+            <div class="col-md-12">
+                <p class="text-center pt-4 text-white" style="font-size: 20px;">Scroll Down</p>
+            </div>
+        </div>   
+    </div>
+</div>
+
+
+<div class="container cust-info-container">
+    <br><br><br><br>
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">What is<span class="text-muted"> Noni Plant ?</span></h2>
+        <p class="lead">Morinda citrifolia is a fruit-bearing tree in the coffee family, Rubiaceae. Its native range extends across Southeast Asia and Australasia, and was spread across the Pacific by Polynesian sailors. The species is now cultivated throughout the tropics and widely naturalized.</p>
+      </div>
+      <div class="col-md-5">
+        <img class="featurette-image img-fluid mx-auto" width="500" height="500" src="{{ url_for('static' , filename='asset/image/Noni/noni2.jpg') }}">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">Benefits of<span class="text-muted"> Noni Plant</span></h2>
+        <p class="lead text-justify">Noni juice has numerous potential benefits, including boosting endurance, relieving pain, supporting your immune system, reducing cellular damage caused by tobacco smoke, and aiding heart health in smokers.</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img class="featurette-image img-fluid mx-auto" width="500" height="500" src="{{ url_for('static' , filename='asset/image/Noni/noni3.jpg') }}">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+      <div class="col-md-12">
+        <h2 class="featurette-heading text-center">How to grow <span class="text-muted">Noni Plant</span></h2>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+            <br><br>
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/U-E99zWBefY" allowfullscreen></iframe>
+              </div>            
+          </div>
+      </div>
+    
+    <hr class="featurette-divider">
+    <h4 class="lead text-left">For more information regarding <span class="text-muted">Noni Plant.</span> Use our PlantBot to answer your questions.</h4>
+
+
+    <hr class="featurette-divider">
+
+</div>
+
+{% endblock %}
+
+{% block local_js %} 
+<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+  intent="WELCOME"
+  chat-title="PlantBot"
+  agent-id="53dde9b2-1054-4c43-b3a9-297ba7b5103f"
+  language-code="en"
+></df-messenger>
+
+{% endblock %}
+

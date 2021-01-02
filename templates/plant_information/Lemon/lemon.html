@@ -1,0 +1,125 @@
+
+<!-- Default Setting -->
+{% extends 'base02.html' %}
+
+<!-- Head Conponents -->
+{% block head %}
+    <title>Lemon Plant [Information]</title>
+    <link rel="stylesheet" href="{{ url_for('static' , filename='css/lemon.css') }}">
+
+  <style>
+    .bg-custom-image {
+
+      background-image: url("{{ url_for('static' , filename='asset/image/Lemon/lemonWall.jpg') }}");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-position-y: 60%;
+      background-position-x: 20%;
+
+      }
+
+  </style>
+
+{% endblock %}
+<!-- Head Conponents -->
+
+
+{% block body %}
+<div class="container-fluid bg-custom-image m-0 p-0 shadow-lg">
+    <nav class="navbar navbar-light">
+      <a class="navbar-brand text-white" href="/">Plantopedia</a>
+      <button class="navbar-toggler bg-white" type="button" data-toggle="collapse" data-target="#navbarsExample01"
+        aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon bg-white"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarsExample01">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item pl-2">
+            <a class="nav-link text-white" href="/leaf_recognition">Leaf Recognition<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item pl-2" >
+            <a class="nav-link text-white" href="/plant_disease_advice">Plant Disease Advice</a>
+          </li>
+          <li class="nav-item active pl-2" style="background-color: white; color: #38603D; border-radius: 5px;">
+            <a class="nav-link active" href="/plant_information">Plant Information</a>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <div class="container-fluid" style="height: 70vh;">
+        <div class="row" style="height: 80%;">
+            <div class="col-md-6 pl-5 py-5" >
+                <h1 class="pt-3 text-white pt-5" style="font-size: 64px;"><b>Lemon</b> Plant</h1>
+                <h3 class="text-white">Information</h3>
+            </div>
+        </div>
+        <div class="row" style="height: 20%;">
+            <div class="col-md-12">
+                <p class="text-center pt-4 text-white" style="font-size: 20px;">Scroll Down</p>
+            </div>
+        </div>   
+    </div>
+</div>
+
+
+<div class="container cust-info-container">
+    <br><br><br><br>
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">What is<span class="text-muted"> Lemon Plant ?</span></h2>
+        <p class="lead">The lemon, Citrus limon, is a species of small evergreen tree in the flowering plant family Rutaceae, native to South Asia, primarily North eastern India.</p>
+      </div>
+      <div class="col-md-5">
+        <img class="featurette-image img-fluid mx-auto" width="500" height="500" src="{{ url_for('static' , filename='asset/image/Lemon/lemonWhat.jpg') }}">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">Benefits of<span class="text-muted"> Lemon Plant</span></h2>
+        <p class="lead text-justify">Lemons contain a high amount of vitamin C, soluble fiber, and plant compounds that give them a number of health benefits. Lemons may aid weight loss and reduce your risk of heart disease, anemia, kidney stones, digestive issues, and cancer.</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img class="featurette-image img-fluid mx-auto" width="500" height="500" src="{{ url_for('static' , filename='asset/image/Lemon/lemonBenefit.jpg') }}">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+      <div class="col-md-12">
+        <h2 class="featurette-heading text-center">How to grow <span class="text-muted">Lemon Plant</span></h2>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+            <br><br>
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/LThXZLtSRN8" allowfullscreen></iframe>
+              </div>            
+          </div>
+      </div>
+    
+    <hr class="featurette-divider">
+    <h4 class="lead text-left">For more information regarding <span class="text-muted">Lemon Plant.</span> Use our PlantBot to answer your questions.</h4>
+
+
+    <hr class="featurette-divider">
+
+</div>
+
+{% endblock %}
+
+{% block local_js %} 
+<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+  intent="WELCOME"
+  chat-title="PlantBot"
+  agent-id="53dde9b2-1054-4c43-b3a9-297ba7b5103f"
+  language-code="en"
+></df-messenger>
+
+{% endblock %}
+
