@@ -1,0 +1,17 @@
+GDrive :
+https://drive.google.com/file/d/1XydeQM9akfOzWT0gADOkl5dXnfkNGdQY/view?usp=sharing
+
+Instruction :
+1. Download the file.
+2. Extract the file into model folder
+3  Then run the system.
+
+---------------------------------------------------------
+							|
+IMPORTANT :						|
+Delete this text file after extraction done.		|  
+							|
+REASON :						|
+To avoid collision between files.			|
+							|
+---------------------------------------------------------
