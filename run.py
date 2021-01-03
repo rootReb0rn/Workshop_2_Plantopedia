@@ -5,6 +5,7 @@ import cv2
 import tensorflow as tf
 from experta import *
 from es_dic_plant import *
+import numpy as np
 
 physical_devices = tf.config.list_physical_devices('GPU')
 tf.config.experimental.set_memory_growth(physical_devices[0], True)
